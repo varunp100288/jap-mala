@@ -1,0 +1,18 @@
+import { useState, useEffect } from "react";
+
+const DailyCounter = ({ dailyTotal, resetDailyTotal  }) => {
+  return (
+    <div className="text-center p-4 bg-white shadow-md rounded-lg">
+      <h2 className="text-xl font-bold text-green-700">Daily Total Count</h2>
+      <p className="text-2xl font-semibold text-gray-800">{dailyTotal}</p>
+      <button
+        onClick={resetDailyTotal}
+        className="mt-2 px-4 py-2 bg-red-500 text-white rounded-lg"
+      >
+        Reset Daily Count
+      </button>
+    </div>
+  );
+};
+
+export default DailyCounter;
