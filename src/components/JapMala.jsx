@@ -10,7 +10,7 @@ export default function JapMala() {
   const [dailyTotal, setDailyTotal] = useState(() => {
     return parseInt(localStorage.getItem("dailyTotal")) || 0;
   });
-
+  
   const maxCount = 108;
 
   // Load Sounds
@@ -47,7 +47,7 @@ export default function JapMala() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       {/* Live Updating Daily Counter */}
-      <DailyCounter dailyTotal={dailyTotal} resetDailyTotal={resetDailyTotal}/>
+      <DailyCounter dailyTotal={dailyTotal} resetDailyTotal={resetDailyTotal} />
 
       <motion.div
         className={`bg-white shadow-lg p-8 rounded-2xl text-center transition-all ${
@@ -57,8 +57,20 @@ export default function JapMala() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold mb-4 text-pink-800">Jap Mala Counter</h1>
+        <h1 className="text-3xl font-bold mb-4 text-pink-800">
+          Jap Mala Counter
+        </h1>
 
+        {/* Progress Bar */}
+        <div className="w-full bg-gray-300 rounded-full h-4 mb-4">
+          <motion.div
+            className="bg-blue-500 h-4 rounded-full"
+            style={{ width: `${(count / maxCount) * 100}%` }}
+            initial={{ width: "0%" }}
+            animate={{ width: `${(count / maxCount) * 100}%` }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          ></motion.div>
+        </div>
         {/* Bead Animation (Moves as you count) */}
         <motion.div
           className="w-16 h-16 bg-yellow-500 rounded-full mx-auto mb-4"
