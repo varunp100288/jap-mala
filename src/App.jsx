@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebaseConfig";
 import Login from "./components/Login";
 import JapMala from "./components/JapMala";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 
 export default function App() {
   const [user, setUser] = useState(null);
