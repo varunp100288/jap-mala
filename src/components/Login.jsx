@@ -1,5 +1,5 @@
-import { useState, useEffect  } from "react";
-import { auth, signInWithGoogle, logout } from "../firebaseConfig";
+import { useState, useEffect } from "react";
+import { auth } from "../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 
 export default function Login() {
@@ -10,23 +10,19 @@ export default function Login() {
       setUser(currentUser);
     });
 
-    return () => unsubscribe(); // Cleanup listener on unmount
+    return () => unsubscribe();
   }, []);
 
-  const handleLogin = async () => {
-    const userData = await signInWithGoogle();
-    setUser(userData);
-  };
-
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       {user ? (
-        <div>
-          <p>Welcome, {user.displayName} 👋</p>
-          <button onClick={logout} className="bg-red-500 text-white px-4 py-2 mt-2">Logout</button>
-        </div>
+        <h1 className="text-2xl font-bold text-green-600">
+          Welcome, {user.displayName}! 👋
+        </h1>
       ) : (
-        <button onClick={handleLogin} className="bg-blue-500 text-white px-4 py-2">Sign in with Google</button>
+        <h1 className="text-2xl font-bold text-blue-600">
+          Please sign in with google to continue
+        </h1>
       )}
     </div>
   );

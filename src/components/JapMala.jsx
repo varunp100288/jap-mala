@@ -45,7 +45,7 @@ export default function JapMala() {
     resetSound.play();
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-left min-h-screen bg-gray-100">
       {/* Live Updating Daily Counter */}
       <DailyCounter dailyTotal={dailyTotal} resetDailyTotal={resetDailyTotal} />
 
