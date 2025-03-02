@@ -10,7 +10,7 @@ export default function JapMala() {
   const [dailyTotal, setDailyTotal] = useState(() => {
     return parseInt(localStorage.getItem("dailyTotal")) || 0;
   });
-  
+
   const maxCount = 108;
 
   // Load Sounds
@@ -58,7 +58,7 @@ export default function JapMala() {
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-3xl font-bold mb-4 text-pink-800">
-          Jap Mala Counter
+          Let's Counts 108 Names
         </h1>
 
         {/* Progress Bar */}
@@ -92,7 +92,7 @@ export default function JapMala() {
         </motion.p>
 
         {/* Animated Count Button with Bounce Effect */}
-        <motion.button
+        {/* <motion.button
           onClick={increment}
           className="relative px-6 py-3 bg-blue-500 text-white text-lg rounded-lg overflow-hidden"
           whileTap={{ scale: 0.9 }}
@@ -100,6 +100,14 @@ export default function JapMala() {
         >
           <span className="absolute inset-0 flex items-center justify-center bg-blue-700 opacity-0 transition-opacity duration-300"></span>
           Count +1
+        </motion.button> */}
+        <motion.button
+          onClick={increment}
+         className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg overflow-hidden relative mr-2"
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ boxShadow: "0px 0px 10px rgba(239, 68, 68, 0.6)" }}
+        >
+          Count Now
         </motion.button>
 
         {/* Animated Reset Button */}
