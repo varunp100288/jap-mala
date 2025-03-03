@@ -21,7 +21,7 @@ export default function Login() {
         </h1>
       ) : (
         <h1 className="text-2xl font-bold text-blue-600">
-          Please sign in with google to continue
+          Please login to continue
         </h1>
       )}
     </div>

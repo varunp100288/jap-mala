@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={signInWithGoogle}
           className="bg-green-500 px-4 py-2 rounded-lg text-white hover:bg-green-700"
         >
-          Sign in with Google
+          Sign in 
         </button>
       )}
     </nav>
