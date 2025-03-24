@@ -4,12 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 
 export default function Login() {
 
-  const numbers = [2,3,4,5,6];
-  const doubleNumber = numbers.map((number) => {
-    return number*2;
-  });
-  console.log(doubleNumber);
-  
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
